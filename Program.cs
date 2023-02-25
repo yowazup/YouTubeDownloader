@@ -6,7 +6,9 @@ namespace YouTubeDownloader
         static void Main(string[] args)
         {
             // адрес видео
-            string url = "https://www.youtube.com/watch?v=DURvbAK1cAY";
+            Console.WriteLine("Дайте ссылку видео на YouTube, которое хочется скачать. Например, такую: https://www.youtube.com/watch?v=DURvbAK1cAY");
+            string url = Console.ReadLine();
+            Console.WriteLine();
 
             // папка для скачивания
             string path = "D:/Repositories/FirstApplication.ConsoleApp/YouTubeDownloader/YouTubeDownloader/bin/Debug/net7.0";  
@@ -23,7 +25,6 @@ namespace YouTubeDownloader
             var download = new Download(receiver);
             sender.SetCommand(download);
             sender.Run(url, path);
-
 
             Console.ReadKey();
         }
